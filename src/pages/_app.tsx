@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import "@/styles/globals.css";
 import {
@@ -14,7 +15,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <SignedIn>
         <div className="flex h-screen bg-special-main">
           <Navbar />
-          <Component {...pageProps} />
+          <div className="flex flex-col flex-1">
+            <Header />
+            <Component {...pageProps} />
+          </div>
         </div>
       </SignedIn>
       <SignedOut>
